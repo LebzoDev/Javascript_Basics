@@ -2,15 +2,24 @@
 
 function compteur_closure(){
     let count=0;
-    return function(){
+    let closure = function(){
         return count++;
     };
+  
+    return closure;
 }
 
-let val1 = compteur_closure();
-console.log(val1());
-console.log(val1());
-console.log(val1());
+//Réference closure valeur1
+let valeur1 = compteur_closure();
+console.log(valeur1()); //0
+console.log(valeur1()); //1
+
+//AUtre réfrence valeur2
+let valeur2 = compteur_closure();
+console.log(valeur2()); //0
+
+//Appel de la reference valeur1
+console.log(valeur1()); //2
 
 
 function compteur_simple(){
