@@ -13,5 +13,10 @@ console.log(""==0); //true
 
 console.log([1,3]=="1,3");//true
 
+console.log(1/"a");
 
-console.log(1/"a")
+console.log(1/"a"); //NaN
+
+console.log(NaN==NaN);
+
+console.log(Object.is(NaN,NaN));
