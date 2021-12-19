@@ -126,3 +126,20 @@ let helloWold = (function(){
 }
 )();
 //---------------------------------------------
+
+
+// Language: javascript
+// Author: Lebzodev
+// Subjet: Paramètres et Arguments
+//----------------------------------------------
+//Les paramètres sont des variables qui sont passées à la fonction
+function sum(a,b){
+    let result = a+b;
+    console.log(result);
+}
+//Les arguments sont des valeurs qui sont passées à la fonction
+sum(2,4); //6
+sum(5,6); //11
+
+
+
