@@ -12,40 +12,42 @@
 // }
 // helloWorld();//Hello World
 
-// //------------------------------------------------------------------------
-// //Pour zero argument nous allons devoir utiliser les () vides
+// //---------------------------------------------------
+// //Pour zero argument, utiliser les () vides
 // let somme = () => {
 //     return 2+2;
 // }
 // console.log(somme());//4
-// //------------------------------------------------------------------------
+// //---------------------------------------------------
 // //Les () sont optionnels avec un seul argument
 // let double = a => {
 //     return a*2;
 // }
 // console.log(double(2));//4
-// //------------------------------------------------------------------------
+// //---------------------------------------------------
 // //Pour une seule instruction,  le return est implicit
 // let double = a => { a*2 };
 // console.log(double(2));//4
-// //------------------------------------------------------------------------
+// //---------------------------------------------------
 // //Pour une seule instruction les {} sont optionnels
 // let double = a => a*2;
 // console.log(double(2));//4
-// //------------------------------------------------------------------------
+// //---------------------------------------------------
 
 // //Fonction régulière d'une somme de deux nombres
 // function somme(a,b){
-//     return a+b;
+//     let result = a+b;
+//     return result;
 // }
 // console.log(somme(2,3));//5
-// //------------------------------------------------------------------------
+// //-----------------------------------------------
 // //Fonction fléchée d'une somme de deux nombres
 // let somme = (a,b) => {
-//     return a+b;
+//     let result = a+b;
+//     return result;
 // }
 // console.log(somme(2,3));//5
-// //------------------------------------------------------------------------
+// //-----------------------------------------------
 
 
 
@@ -65,7 +67,7 @@ const voiture = {
   };
   console.log(voiture.description());
   // Je suis une Peugeot bleu
-//------------------------------------------------------------------------
+//--------------------------------------------------------------
 
 const voitureArrow = {
     marque: "Peugeot",
@@ -78,3 +80,41 @@ const voitureArrow = {
   };
   console.log(voitureArrow.description());
   //Je suis une undefined undefined
+
+
+//----------------Notre tableau de personnes---------------------
+//---------------------------------------------------------------
+let personnes = [
+    { nom: "ABdou", age: 25, ville: "Dakar" },
+    { nom: "Colline", age: 17, ville: "Paris" },
+    { nom: "Bouhlel", age: 18, ville: "Dakar" },
+];
+//---------------------------------------------------------------
+//-------------------Fonction régulière--------------------------
+//---------------------------------------------------------------
+const majeurs = personnes.filter(function (personne) {
+    if (personne.age >= 18) {
+      return true;
+    }
+});
+console.log("Les majeurs ", majeurs);
+// [ { nom: 'ABdou', age: 25, ville: 'Dakar' }, 
+//   { nom: 'Bouhlel', age: 18, ville: 'Dakar' } ]
+//---------------------------------------------------------------
+//-------------------Fonction fléchée----------------------------
+//---------------------------------------------------------------
+const majeurs = personnes.filter(personne => personne.age >= 18);
+console.log("Les majeurs", donate);
+//[ { nom: 'ABdou', age: 25, ville: 'Dakar' }, 
+//  { nom: 'Bouhlel', age: 18, ville: 'Dakar' } ]
+//---------------------------------------------------------------
+
+//Fonction regulière comme callback
+setTimeout(function () {
+    console.log("Hello World");
+  }, 4000);
+
+//Fonction fléchée comme callback
+setTimeout(() => console.log("Hello world"), 4000);
+  
+  
